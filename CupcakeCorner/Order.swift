@@ -77,7 +77,7 @@ class Order: ObservableObject, Codable {
     }
     
     required init(from decoder: Decoder) throws {
-        var container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
         type = try container.decode(Int.self, forKey: .type)
         quantity = try container.decode(Int.self, forKey: .quantity)
